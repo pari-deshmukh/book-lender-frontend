@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: nav.js</title>
+    <title>JSDoc: Source: account.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: nav.js</h1>
+    <h1 class="page-title">Source: account.js</h1>
 
     
 
@@ -27,31 +27,26 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from 'react';
-import { Menu } from 'antd';
-import { Link } from "react-router-dom";
 
 /**
- * Component for displaying the library's navigation menu.
+ * Component for displaying a User's account details.
  *
  * @component
  * @example
  * return (
- *   &lt;Nav />
+ *   &lt;Account />
  * )
  */
-function Nav(props) {
+function Account(props) {
   return (
     &lt;>
-      &lt;div className="logo" />
-      &lt;Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
-        &lt;Menu.Item key="1">&lt;Link to="/">Home&lt;/Link>&lt;/Menu.Item>
-        &lt;Menu.Item key="2">&lt;Link to="/account">Account&lt;/Link>&lt;/Menu.Item>        
-      &lt;/Menu>
+      &lt;h1>Account&lt;/h1>
+      &lt;p>This is where account information will be displayed&lt;/p>
     &lt;/>
   );
 }
 
-export default Nav; </code></pre>
+export default Account;</code></pre>
         </article>
     </section>
 
