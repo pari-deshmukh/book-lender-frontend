@@ -1,5 +1,15 @@
 import { Menu } from 'antd';
 
+/**
+ * Component for displaying the library's navigation menu.
+ *
+ * @component
+ * @example
+ * return (
+ *   <Nav />
+ * )
+ */
+
 function Nav(props) {
   return (
     <>
