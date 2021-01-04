@@ -13,6 +13,7 @@ import Register from './components/register';
 import Login from './components/login'; 
 import Home from './components/home';
 import Book from './components/book';
+import AddBook from './components/addbook';
 
 import UserContext from './contexts/user';
 
@@ -56,6 +57,7 @@ class App extends React.Component {
           <Content>
             <Switch>
               <Route path="/account" children={<Account />} />
+              <Route path="/books/add" children={<AddBook />} />
               <Route path="/register" children={<Register />} />
               <Route path="/login" children={<Login />} />
               <Route path="/book/:id" children={<Book />} />

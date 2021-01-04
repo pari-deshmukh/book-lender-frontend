@@ -41,7 +41,6 @@ class Home extends React.Component {
     .then(json)
     .then(data => {
       this.setState({ books: data })
-      console.log("loaded");
     })
     .catch(err => console.log("Error fetching books"));
   }
