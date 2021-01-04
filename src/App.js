@@ -14,28 +14,61 @@ import Login from './components/login';
 import Home from './components/home';
 import Book from './components/book';
 
+import UserContext from './contexts/user';
+
 const { Header, Content, Footer } = Layout;
 
-function App() {
-  return (
-    <Router>
-      <Header>
-        <Nav />
-      </Header>
-      <Content>
-        <Switch>
-          <Route path="/account" children={<Account />} />
-          <Route path="/register" children={<Register />} />
-          <Route path="/login" children={<Login />} />
-          <Route path="/book/:id" children={<Book />} />
-          <Route path="/" children={<Home />} />
-        </Switch>
-      </Content>
+class App extends React.Component {
 
-      <Footer style={{ textAlign: 'center' }}>Created by Pranali Deshmukh</Footer>
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {loggedIn: false}
+    }
+    this.login = this.login.bind(this);
+    this.logout = this.logout.bind(this);
+  }
 
-    </Router>
-  );
+  login(user) {
+    console.log("User is now being set on the context");
+    user.loggedIn = true;
+    this.setState({user:user});
+  }
+
+  logout() {
+    this.setState({user: {loggedIn:false}});
+  }
+
+  render () {
+    const context = {
+      user: this.state.user,
+      login: this.login,
+      logout: this.logout
+    };
+
+    return (
+      <UserContext.Provider value={context}>
+        <Router>
+          <Header>
+            <Nav />
+          </Header>
+
+          <Content>
+            <Switch>
+              <Route path="/account" children={<Account />} />
+              <Route path="/register" children={<Register />} />
+              <Route path="/login" children={<Login />} />
+              <Route path="/book/:id" children={<Book />} />
+              <Route path="/" children={<Home />} exact />
+            </Switch>
+          </Content>
+
+          <Footer style={{ textAlign: 'center' }}>Created by Pranali Deshmukh</Footer>
+
+        </Router>
+      </UserContext.Provider>  
+    );
+  }
 }
 
 export default App;
