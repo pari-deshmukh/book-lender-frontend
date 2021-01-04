@@ -4,6 +4,15 @@ import BookGrid from './bookgrid';
 
 const { Search } = Input;
 
+/**
+ * Component for displaying the library's main content in the Home page.
+ *
+ * @component
+ * @example
+ * return (
+ *   <Home />
+ * )
+ */
 function Home(props) {
   return (
     <>
