@@ -16,7 +16,6 @@ import UserContext from '../contexts/user';
 function Nav(props) {
   const context = useContext(UserContext);
   const loggedIn = context.user.loggedIn;
-  console.log(context);
   let LoginNav;
   if (!loggedIn) {
     LoginNav = (
@@ -33,7 +32,8 @@ function Nav(props) {
     LoginNav = (
       <>
       <Menu.Item key="2"><Link to="/account">Account</Link></Menu.Item>
-      <Menu.Item key="3" onClick={context.logout}>
+      <Menu.Item key="3"><Link to="/books/add">Add Book</Link></Menu.Item>
+      <Menu.Item key="4" onClick={context.logout}>
         <Link to="/">Logout</Link>
       </Menu.Item>
       </>
