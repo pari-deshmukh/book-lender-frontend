@@ -8,8 +8,10 @@ import {
 import './App.css';
 
 import Nav from './components/nav';
-import Home from './components/home';
 import Account from './components/account';
+import Register from './components/register';
+import Login from './components/login'; 
+import Home from './components/home';
 import Book from './components/book';
 
 const { Header, Content, Footer } = Layout;
@@ -23,6 +25,8 @@ function App() {
       <Content>
         <Switch>
           <Route path="/account" children={<Account />} />
+          <Route path="/register" children={<Register />} />
+          <Route path="/login" children={<Login />} />
           <Route path="/book/:id" children={<Book />} />
           <Route path="/" children={<Home />} />
         </Switch>
